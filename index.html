@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 7</title>
+    <style>
+      body {
+        display: flex;
+        text-align: center;
+        color: aliceblue;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(black, rgb(60, 64, 64));
+        height: 100vh;
+        overflow: hidden;
+        /* transform: scale(1.5); */
+      }
+      .container {
+        text-align: center;
+      }
+      /* button */
+      .btn {
+        margin: 50px;
+        margin-top: 50%;
+        padding: 15px 40px;
+        border: none;
+        outline: none;
+        color: #fff;
+        cursor: pointer;
+        position: relative;
+        z-index: 0;
+        border-radius: 12px;
+      }
+      .btn::after {
+        content: "";
+        z-index: -1;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #333;
+        left: 0;
+        top: 0;
+        border-radius: 10px;
+      }
+      /* glow */
+      .btn::before {
+        content: "";
+        background: linear-gradient(
+          50deg,
+          #ff0000,
+          #ff7300,
+          #fffb00,
+          #48ff00,
+          #00ffd5,
+          #002bff,
+          #ff00c8,
+          #ff0000
+        );
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        background-size: 600%;
+        z-index: -1;
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
+        filter: blur(8px);
+        animation: glowing 20s linear infinite;
+        transition: opacity 0.3s ease-in-out;
+        border-radius: 10px;
+        opacity: 0;
+      }
+
+      @keyframes glowing {
+        0% {
+          background-position: 0 0;
+        }
+        50% {
+          background-position: 400% 0;
+        }
+        100% {
+          background-position: 0 0;
+        }
+      }
+
+      /* hover */
+      .btn:hover::before {
+        opacity: 1;
+      }
+
+      .btn:active:after {
+        background: transparent;
+      }
+
+      .btn:active {
+        color: #000;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Assignment 7 - Home Page</h1>
+      <br>
+      <br>
+      
+      <a href="./Task1.html" class="btn">Task 1</a>
+      <a href="./Task2.html" class="btn">Task 2</a>
+      <a href="./bootstrap.html" class="btn">Task 3</a>
+    </div>
+  </body>
+</html>
